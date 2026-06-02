@@ -15,7 +15,6 @@ async function Register(req,res){
     }
 
     // create user 
-
     const user=await userModel.create({
         fullname:{
             firstname,lastname
@@ -39,7 +38,6 @@ async function Register(req,res){
 
 }
 // login controller
-
 async function Login(req,res){
     const {email,password}=req.body
 
@@ -76,8 +74,6 @@ async function Login(req,res){
 
 
 }
-
-
 
 
 
