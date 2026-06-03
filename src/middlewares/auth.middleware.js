@@ -11,8 +11,7 @@ async function authUser(req,res,next){
     }
     try{
 
-     
-        
+    
         const decoded=jwt.verify(token,process.env.JWT_KEY)
         const user=await userModel.findOne({_id:decoded.id})
 
