@@ -5,11 +5,13 @@ dns.setServers(['8.8.8.8', '1.1.1.1']);
 const app=require('./src/app')
 // database
 const connectDb=require('./src/db/db')
-// const =require()
+
 // socket server
 const httpServer=require('http').createServer(app)
 const initSocket=require('./src/sockets/socke.server')
 
+
+//calling fnc
 connectDb()
 initSocket(httpServer)
 httpServer.listen(3000,()=>{
