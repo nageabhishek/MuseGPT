@@ -1,6 +1,7 @@
 const{ Server, Socket }=require("socket.io")
-const generateResponce=require('../services/ai.service')
+const aiService=require('../services/ai.service')
 const userModel=require('../models/user.model')
+const messageModel=require('../models/messages.model')
 const cookie=require('cookie')
 const jwt=require('jsonwebtoken')
 
@@ -31,18 +32,41 @@ catch(err){
 
 
 io.on("connection", (socket) => {
-
-
-
   console.log("a user connected");
-  
-
   socket.on('question',async(data)=>{
-    
 
-    const response=await generateResponce(data.content)
+      // stm memory question data
+    await messageModel.create({
+      chat:data.chat,
+      content:data.content,
+      role:"user"
+    })
+
+    const chatHistory=await messageModel.find({
+      chat:data.chat
+    })
+
+    
+    const response=await aiService.generateResponce(chatHistory.map(item=>{
+      return {
+        role:item.role,
+        parts:[{text:item.content}]
+      }
+    }))
     // console.log(response)
-    socket.emit('answer',{response})
+
+// stm memory question data
+    await messageModel.create({
+      chat:data.chat,
+      content:response,
+      role:"model"
+    })
+
+    socket.emit('answer',{
+      response,
+      chat:data.chat
+
+    })
 
   })
 
