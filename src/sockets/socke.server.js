@@ -2,6 +2,7 @@ const{ Server, Socket }=require("socket.io")
 const aiService=require('../services/ai.service')
 const userModel=require('../models/user.model')
 const messageModel=require('../models/messages.model')
+const{createMemory,queryMemoery}=require('../services/vectordb.service')
 const cookie=require('cookie')
 const jwt=require('jsonwebtoken')
 
@@ -36,31 +37,34 @@ io.on("connection", (socket) => {
   socket.on('question',async(data)=>{
 
       // stm memory question data
-    await messageModel.create({
-      chat:data.chat,
-      content:data.content,
-      role:"user"
-    })
+    // await messageModel.create({
+    //   chat:data.chat,
+    //   content:data.content,
+    //   role:"user"
+    // })
+    const vectors=await aiService.generateVector(data.content)
+console.log(vectors)
 
-    const chatHistory=await messageModel.find({
-      chat:data.chat
-    })
 
+const chatHistory = (await messageModel.find({
+    chat: data.chat
+   }).sort({ createdAt: -1 }).limit(4).lean()).reverse();
     
-    const response=await aiService.generateResponce(chatHistory.map(item=>{
-      return {
-        role:item.role,
-        parts:[{text:item.content}]
-      }
-    }))
+    // const response=await aiService.generateResponce(chatHistory.map(item=>{
+    //   return {
+    //     role:item.role,
+    //     parts:[{text:item.content}]
+    //   }
+    // }))
+    const response=await aiService.generateResponce(data.content)
     // console.log(response)
 
 // stm memory question data
-    await messageModel.create({
-      chat:data.chat,
-      content:response,
-      role:"model"
-    })
+    // await messageModel.create({
+    //   chat:data.chat,
+    //   content:response,
+    //   role:"model"
+    // })
 
     socket.emit('answer',{
       response,
