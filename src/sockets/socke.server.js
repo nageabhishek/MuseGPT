@@ -51,7 +51,7 @@ io.on("connection", (socket) => {
     chat:data.chat
   }
 })
-// console.log(memory)
+console.log(memory) 
 
     // ltm memory
      await createMemory({
@@ -95,9 +95,6 @@ const chatHistory = (await messageModel.find({
 
       }
     })
-
-
-
 
     socket.emit('answer',{
       response,
