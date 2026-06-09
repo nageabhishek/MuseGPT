@@ -11,6 +11,7 @@ async function generateResponce(prompt) {
    return response.text
 }
 
+
 async function generateVector(content){
   
     const response = await ai.models.embedContent({

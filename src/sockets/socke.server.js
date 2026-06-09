@@ -95,6 +95,7 @@ const chatHistory = (await messageModel.find({
 
       }
     })
+    
 
     socket.emit('answer',{
       response,
