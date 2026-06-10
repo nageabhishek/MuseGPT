@@ -5,7 +5,6 @@ const messageModel=require('../models/messages.model')
 const{createMemory,queryMemory}=require('../services/vectordb.service')
 const cookie=require('cookie')
 const jwt=require('jsonwebtoken')
-const { QueryVectorFromJSON } = require("@pinecone-database/pinecone/dist/pinecone-generated-ts-fetch/db_data")
 
 
 function initSocket(httpServer){
@@ -50,7 +49,7 @@ io.on("connection", (socket) => {
 
 const chatHistory = (await messageModel.find({
     chat: data.chat
-   }).sort({ createdAt: -1 }).limit(4).lean()).reverse();
+   }).sort({ createdAt: -1 }).limit(20).lean()).reverse();
     
     const response=await aiService.generateResponce(chatHistory.map(item=>{
       return {

@@ -2,14 +2,14 @@
 const{ Pinecone } =require( '@pinecone-database/pinecone')
 
 // Initialize a Pinecone client with your API key
-const pc = new Pinecone({apiKey:process.env.PINECONE_KEY});
+const pc = new Pinecone({apiKey:process.env.PINECONE_API_KEY});
 const gptIndex=pc.index('muse-gpt')
 
-async function createMemory({vectors,metadata,messageaid}) {
+async function createMemory({vectors,metadata,messageId}) {
 
     await gptIndex.upsert({
         records:[{
-            id:messageaid,
+            id:messageId,
             values:vectors,
             metadata
 
