@@ -43,27 +43,9 @@ io.on("connection", (socket) => {
       content:data.content,
       role:"user"
     })
-    const vectors=await aiService.generateVector(data.content)
-    const memory=await queryMemory({
-  queryVector:vectors,
-  limit:3,
-  metadata:{
-    chat:data.chat
-  }
-})
-console.log(memory) 
+ 
 
-    // ltm memory
-     await createMemory({
-      vectors:vectors,
-      messageaid:message.id,
-      metadata:{
-        chat:data.chat,
-        user:socket.user._id,
-        text:data.content
-
-      }
-    })
+ 
 
 
 const chatHistory = (await messageModel.find({
@@ -78,24 +60,12 @@ const chatHistory = (await messageModel.find({
     }))
     
 // stm memory q
-    const responseMessage= await messageModel.create({
+     await messageModel.create({
       chat:data.chat,
       content:response,
       role:"model"
     })
-    //ltm
-    const responceVectors=await aiService.generateVector(response)
-     await createMemory({
-      vectors:responceVectors,
-      messageaid:responseMessage.id,
-      metadata:{
-        chat:data.chat,
-        user:socket.user._id,
-        text:response
-
-      }
-    })
-    
+   
 
     socket.emit('answer',{
       response,
