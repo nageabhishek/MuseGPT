@@ -91,8 +91,7 @@ const ltm = [ {
                         ${memory.map(item => item.metadata.text).join("\n")}
  ` } ]} ]
 
-console.log(ltm[0])
-console.log(stm)
+
 
     const response=await aiService.generateResponce([...ltm,...stm])
 
