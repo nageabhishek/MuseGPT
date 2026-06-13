@@ -6,7 +6,7 @@ async function authUser(req,res,next){
 // validate tokn
    if(!token){
         return res.json({
-            message:"unauthorize"
+            message:"unauthorize:no token found"
         })
     }
     try{
@@ -22,7 +22,7 @@ async function authUser(req,res,next){
     }
     catch(err){
         res.json({
-            message:"Unauthorized"
+            message:"Unauthorized: invalid token"
         })
     }
 
