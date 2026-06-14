@@ -8,7 +8,7 @@ const connectDb=require('./src/db/db')
 
 // socket server
 const httpServer=require('http').createServer(app)
-const initSocket=require('./src/sockets/socke.server')
+const initSocket=require('./src/sockets/socket.server')
 
 
 //calling fnc
