@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | MuseGPT</title>
+
+    <link rel="stylesheet" href="/css/auth.css">
+</head>
+<body>
+
+<div class="auth-container">
+
+    <div class="auth-card">
+
+        <div class="logo">
+
+            <h1>MuseGPT</h1>
+
+            <p>Your Personal AI Assistant</p>
+
+        </div>
+
+
+        <h2>Welcome Back</h2>
+
+
+<form action="/api/auth/login" method="POST">
+            <input
+            type="email"
+            name="email"
+            placeholder="Email"
+            required>
+
+
+            <input
+            type="password"
+            name="password"
+            placeholder="Password"
+            required>
+
+
+
+            <button type="submit">
+
+                Continue
+
+            </button>
+
+        </form>
+
+
+        <div class="divider">
+
+            <span>OR</span>
+
+        </div>
+
+
+        <button class="google-btn">
+
+            <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg">
+
+            Continue with Google
+
+        </button>
+
+
+        <p class="switch">
+
+            Don't have an account?
+
+            <a href="/register">
+
+                Create one
+
+            </a>
+
+        </p>
+
+
+        <p class="terms">
+
+            By continuing, you agree to MuseGPT's
+
+            Terms of Service and Privacy Policy.
+
+        </p>
+
+    </div>
+
+</div>
+
+</body>
+</html>

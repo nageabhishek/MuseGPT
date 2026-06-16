@@ -5,9 +5,10 @@ async function authUser(req,res,next){
     const token=req.cookies?.token
 // validate tokn
    if(!token){
-        return res.json({
-            message:"unauthorize:no token found"
-        })
+        // return res.json({
+        //     message:"unauthorize:no token found"
+        // })
+         return res.redirect("/login")
     }
     try{
 
@@ -21,13 +22,14 @@ async function authUser(req,res,next){
 
     }
     catch(err){
-        res.json({
-            message:"Unauthorized: invalid token"
-        })
+        // res.json({
+        //     message:"Unauthorized: invalid token"
+        // })
+         return res.redirect("/login")
     }
 
 
 }
 
 
-module.exports=authUser
+module.exports={authUser}

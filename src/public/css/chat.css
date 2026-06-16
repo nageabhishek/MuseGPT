@@ -1,0 +1,255 @@
+*{
+
+    margin:0;
+
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:Inter,sans-serif;
+
+}
+
+
+
+body{
+
+    background:#212121;
+
+    color:white;
+
+    height:100vh;
+}
+
+
+
+/* Layout */
+
+.container{
+
+    display:flex;
+
+    height:100vh;
+}
+
+
+
+/* Sidebar */
+
+.sidebar{
+
+    width:270px;
+
+    background:#171717;
+
+    border-right:1px solid #2f2f2f;
+
+    display:flex;
+
+    flex-direction:column;
+
+    padding:20px;
+}
+
+
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#10A37F;
+
+    margin-bottom:25px;
+}
+
+
+
+.new-chat{
+
+    border:none;
+
+    background:#10A37F;
+
+    color:white;
+
+    padding:14px;
+
+    border-radius:14px;
+
+    font-size:15px;
+
+    cursor:pointer;
+
+    margin-bottom:25px;
+}
+
+
+
+.chat-history{
+
+    flex:1;
+
+    overflow:auto;
+}
+
+
+
+.chat-item{
+
+    padding:14px;
+
+    border-radius:12px;
+
+    margin-bottom:10px;
+
+    cursor:pointer;
+
+    transition:.3s;
+}
+
+
+
+.chat-item:hover{
+
+    background:#2a2a2a;
+}
+
+
+
+.logout{
+
+    border-top:1px solid #2f2f2f;
+
+    padding-top:20px;
+}
+
+
+
+.logout a{
+
+    text-decoration:none;
+
+    color:#ff6b6b;
+}
+
+
+
+/* Main */
+
+.main{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    position:relative;
+}
+
+
+
+.welcome{
+
+    text-align:center;
+
+    margin-top:120px;
+}
+
+
+
+.welcome h1{
+
+    font-size:48px;
+
+    margin-bottom:15px;
+}
+
+
+
+.welcome p{
+
+    color:#b5b5b5;
+}
+
+
+
+/* Messages */
+
+.messages{
+
+    flex:1;
+
+    padding:40px 120px;
+
+    overflow:auto;
+}
+
+
+
+/* Input */
+
+.input-box{
+
+    width:850px;
+
+    max-width:90%;
+
+    background:#2a2a2a;
+
+    border:1px solid #3b3b3b;
+
+    border-radius:25px;
+
+    padding:15px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:15px;
+
+    margin:20px auto;
+}
+
+
+
+textarea{
+
+    flex:1;
+
+    border:none;
+
+    outline:none;
+
+    resize:none;
+
+    background:transparent;
+
+    color:white;
+
+    font-size:16px;
+}
+
+
+
+.input-box button{
+
+    width:45px;
+
+    height:45px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:#10A37F;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+}

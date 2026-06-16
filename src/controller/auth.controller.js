@@ -5,7 +5,7 @@ const jwt=require('jsonwebtoken')
 
 // register controller
 async function Register(req,res){
-    const {fullname:{firstname,lastname},email,password}=req.body
+    const {firstname,lastname,email,password}=req.body
     // check user exist or not
     const isUserExist=await userModel.findOne({email})
     if(isUserExist){
@@ -28,11 +28,12 @@ async function Register(req,res){
     const token=jwt.sign({id:user._id},process.env.JWT_KEY)
     res.cookie('token',token)
 
-    res.json({
-        message:"user register Sucessfully",
-        user:user
+    // res.json({
+    //     message:"user register Sucessfully",
+    //     user:user
 
-    })
+    // })
+     return res.redirect("/chat")
 
 
 
@@ -61,16 +62,18 @@ async function Login(req,res){
     const token=jwt.sign({id:isUser._id},process.env.JWT_KEY)
     res.cookie('token',token)
 
-    res.json({
-        message:'user loggedIn succesfully',
-        user:{
-           id: isUser._id,
-           email:isUser.email,
-           password:isUser.password
+    // res.json({
+    //     message:'user loggedIn succesfully',
+    //     user:{
+    //        id: isUser._id,
+    //        email:isUser.email,
+    //        password:isUser.password
 
-        }
+    //     }
         
-    })
+    // })
+         return res.redirect("/chat")
+
 
 
 }

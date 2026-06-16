@@ -6,7 +6,7 @@ const authMiddleware=require('../middlewares/auth.middleware')
 const chatController=require('../controller/chat.controller')
 
 // Routes
-router.post('/',authMiddleware,chatController)
+router.post('/',authMiddleware.authUser,chatController)
 
 
 

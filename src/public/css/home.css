@@ -1,0 +1,244 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+body{
+
+    background:#0f0f0f;
+
+    color:white;
+}
+
+
+
+/* NAVBAR */
+
+.navbar{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:25px 70px;
+}
+
+
+.logo{
+
+    font-size:30px;
+
+    font-weight:700;
+
+    color:#ffffff;
+}
+
+
+.nav-btns{
+
+    display:flex;
+
+    gap:15px;
+}
+
+
+.login-btn,
+.signup-btn{
+
+    text-decoration:none;
+
+    padding:12px 20px;
+
+    border-radius:12px;
+
+    color:white;
+
+    transition:0.3s;
+}
+
+
+.login-btn{
+
+    border:1px solid #333;
+}
+
+
+.login-btn:hover{
+
+    background:#1d1d1d;
+}
+
+
+.signup-btn{
+
+    background:#10a37f;
+}
+
+
+.signup-btn:hover{
+
+    background:#0d8d6d;
+}
+
+
+
+/* HERO */
+
+.hero{
+
+    min-height:70vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:20px;
+}
+
+
+.hero h1{
+
+    font-size:70px;
+
+    margin-bottom:15px;
+}
+
+
+.hero h2{
+
+    font-size:32px;
+
+    color:#d5d5d5;
+
+    margin-bottom:25px;
+}
+
+
+.hero p{
+
+    width:700px;
+
+    max-width:90%;
+
+    color:#b3b3b3;
+
+    line-height:1.8;
+
+    font-size:18px;
+
+    margin-bottom:40px;
+}
+
+
+
+.hero-buttons{
+
+    display:flex;
+
+    gap:20px;
+}
+
+
+.primary-btn,
+.secondary-btn{
+
+    text-decoration:none;
+
+    padding:15px 30px;
+
+    border-radius:14px;
+
+    font-weight:bold;
+}
+
+
+.primary-btn{
+
+    background:#10a37f;
+
+    color:white;
+}
+
+
+.secondary-btn{
+
+    border:1px solid #444;
+
+    color:white;
+}
+
+
+.secondary-btn:hover{
+
+    background:#1c1c1c;
+}
+
+
+
+/* FEATURES */
+
+.features{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:30px;
+
+    padding:50px;
+}
+
+
+.card{
+
+    width:300px;
+
+    background:#171717;
+
+    border:1px solid #242424;
+
+    border-radius:20px;
+
+    padding:30px;
+}
+
+
+.card h3{
+
+    margin-bottom:15px;
+}
+
+
+.card p{
+
+    color:#b0b0b0;
+
+    line-height:1.7;
+}
+
+
+
+/* FOOTER */
+
+footer{
+
+    text-align:center;
+
+    padding:30px;
+
+    color:#888;
+
+    border-top:1px solid #222;
+
+    margin-top:40px;
+}
