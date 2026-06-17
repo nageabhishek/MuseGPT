@@ -180,13 +180,15 @@ body{
 
 .messages{
 
-    flex:1;
+flex:1;
 
-    padding:40px 120px;
+overflow-y:auto;
 
-    overflow:auto;
+padding:30px 100px;
+
+padding-bottom:140px;
+
 }
-
 
 
 /* Input */
@@ -252,4 +254,56 @@ textarea{
     cursor:pointer;
 
     font-size:18px;
+}
+
+.user-message{
+
+    background:#10A37F;
+
+    color:white;
+
+    padding:14px 18px;
+
+    max-width:70%;
+
+    margin-left:auto;
+
+    margin-top:20px;
+
+    border-radius:18px;
+
+    word-wrap:break-word;
+
+}
+
+
+
+.ai-message{
+
+    background:#2a2a2a;
+
+    color:white;
+
+    padding:18px;
+
+    max-width:80%;
+
+    margin-top:20px;
+
+    border-radius:18px;
+
+    line-height:1.7;
+
+    word-wrap:break-word;
+
+}
+
+.ai-message pre{
+
+    white-space:pre-wrap;
+
+    font-family:inherit;
+
+    margin:0;
+
 }

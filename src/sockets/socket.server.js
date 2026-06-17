@@ -71,7 +71,7 @@ io.on("connection", (socket) => {
 }),
  messageModel.find({
     chat: data.chat
-   }).sort({ createdAt: -1 }).limit(20).lean()
+   }).sort({ createdAt: 1 }).limit(20).lean()
 
     ])
     
@@ -100,7 +100,7 @@ const ltm = [ {
     const response=await aiService.generateResponce([...ltm,...stm])
 
     socket.emit('answer',{
-      response,
+      content:response,
       chat:data.chat
 
     })
@@ -129,12 +129,7 @@ const ltm = [ {
 
     })
 
-    
-
-
-
-    
-
+  
   })
 
   

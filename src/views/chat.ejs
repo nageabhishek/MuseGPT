@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat | MuseGPT</title>
+    <title>MuseGPT</title>
 
     <link rel="stylesheet" href="/css/chat.css">
 </head>
@@ -22,37 +22,18 @@
         </div>
 
 
-      <button class="new-chat" id="newChatBtn">
+        <button class="new-chat" id="newChatBtn">
 
-    + New Chat
+            + New Chat
 
-</button>
-
-
-
-        <div class="chat-history">
-
-            <div class="chat-item">
-
-                New Chat
-
-            </div>
+        </button>
 
 
-            <div class="chat-item">
 
-                JavaScript Help
-
-            </div>
-
-
-            <div class="chat-item">
-
-                DSA Questions
-
-            </div>
+        <div class="chat-history" id="chatHistory">
 
         </div>
+
 
 
 
@@ -66,8 +47,9 @@
 
         </div>
 
-
     </aside>
+
+
 
 
 
@@ -76,7 +58,8 @@
 
     <main class="main">
 
-        <div class="welcome">
+
+        <div class="welcome" id="welcome">
 
             <h1>
 
@@ -97,9 +80,8 @@
 
         <div class="messages" id="messages">
 
-            <!-- Chat messages here -->
-
         </div>
+
 
 
 
@@ -107,16 +89,23 @@
 
         <div class="input-box">
 
-           <textarea
-id="messageInput"
-placeholder="Ask MuseGPT anything..."
-rows="1"></textarea>
+            <textarea
 
-<button id="sendBtn">
+                id="messageInput"
 
-↑
+                placeholder="Ask MuseGPT anything..."
 
-</button>
+                rows="1">
+
+            </textarea>
+
+
+            <button id="sendBtn">
+
+                ↑
+
+            </button>
+
 
         </div>
 
@@ -125,114 +114,14 @@ rows="1"></textarea>
 
 
 </div>
+
+
+
+<!-- Scripts -->
+
 <script src="/socket.io/socket.io.js"></script>
-<script>
 
-const socket = io();
-
-console.log(socket);
-
-</script>
-
-<script>
-
-let currentChat = null;
-
-
-
-const newChatBtn = document.getElementById("newChatBtn");
-
-newChatBtn.addEventListener("click", async ()=>{
-
-    const response = await fetch("/api/chat",{
-
-        method:"POST",
-
-        headers:{
-            "Content-Type":"application/json"
-        },
-
-        body:JSON.stringify({
-
-            title:"New Chat"
-
-        })
-
-    });
-
-    const data = await response.json();
-
-    currentChat = data.chat._id;
-
-    console.log(currentChat);
-
-})
-
-</script>
-<script>
-
-const sendBtn=document.getElementById("sendBtn");
-
-const messageInput=document.getElementById("messageInput");
-
-const messages=document.getElementById("messages");
-
-
-sendBtn.addEventListener("click",()=>{
-
-    const text=messageInput.value;
-
-    if(!text || !currentChat){
-
-        return;
-
-    }
-
-
-    socket.emit("question",{
-
-        chat:currentChat,
-
-        content:text
-
-    });
-
-
-
-    messages.innerHTML += `
-
-        <div class="user-message">
-
-            ${text}
-
-        </div>
-
-    `;
-
-
-    messageInput.value="";
-
-})
-
-</script>
-<script>
-
-socket.on("answer",(data)=>{
-
-
-    messages.innerHTML += `
-
-        <div class="ai-message">
-
-            ${data.content}
-
-        </div>
-
-    `;
-
-})
-
-</script>
+<script src="/js/chat.js"></script>
 
 
 </body>
