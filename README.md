@@ -112,10 +112,4 @@ npm start
 
 Contributions, suggestions, and improvements are welcome. Feel free to fork the repository and submit a pull request.
 
-## 📜 License
 
-This project is licensed under the MIT License.
-
----
-
-Built with ❤️ using JavaScript and AI.
