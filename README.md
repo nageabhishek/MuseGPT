@@ -1,115 +1,216 @@
-# MuseGPT 🤖
+# MuseGPT 🚀
 
-MuseGPT is an AI-powered conversational assistant inspired by modern large language models. It provides an intuitive chat experience with a clean interface, intelligent responses, and scalable architecture.
+An AI-powered chat application built with **Node.js, Express.js, EJS, Socket.io, MongoDB, and Google Gemini API**. MuseGPT provides real-time AI conversations, user authentication, chat history management, and persistent memory capabilities through a clean web interface.
 
-## ✨ Features
+## 🌐 Live Demo
 
-* 🔐 User Authentication
-* 💬 Real-time Chat Interface
-* 🧠 AI Integration for Intelligent Responses
-* 📚 Long-Term Memory Support using Vector Database
-* ⚡ Fast and Responsive UI
-* 📱 Mobile-Friendly Design
-* ☁️ Deployment Ready
-* 🔄 Clean and Modular Code Structure
+**Live Application:** https://musegpt.onrender.com
+
+**GitHub Repository:** https://github.com/nageabhishek/MuseGPT
+
+---
+
+## 📌 Features
+
+### 🤖 AI-Powered Chat
+
+* Integrated with Google Gemini API
+* Real-time AI responses
+* Conversational interface
+
+### 🔐 Authentication
+
+* User registration and login
+* JWT-based authentication
+* Secure cookie management
+
+### 💬 Real-Time Communication
+
+* Socket.io integration
+* Instant message updates
+* Live chat experience
+
+### 🧠 Memory System
+
+* Persistent conversation history
+* Context-aware interactions
+* Vector database integration
+
+### 📂 Chat Management
+
+* Store chat history
+* Retrieve previous conversations
+* User-specific sessions
+
+### 🎨 User Interface
+
+* Server-side rendering with EJS
+* Responsive design
+* Clean and modern chat interface
+
+---
 
 ## 🛠️ Tech Stack
-
-### Frontend
-
-* HTML
-* CSS
-* JavaScript
 
 ### Backend
 
 * Node.js
 * Express.js
+* Socket.io
 
-### AI & Memory
+### Frontend
 
-* OpenAI API
-* Vector Database (Pinecone)
+* EJS
+* HTML5
+* CSS3
+* JavaScript
 
-### Authentication
+### Database
 
-* JWT (JSON Web Tokens)
-* bcrypt
+* MongoDB Atlas
+* Mongoose
+
+### AI Integration
+
+* Google Gemini API
+
+### Authentication & Security
+
+* JWT
+* Cookies
+* Environment Variables
 
 ### Deployment
 
-* Vercel
-* Environment Variables for Secure Configuration
+* Render
+* MongoDB Atlas
 
-## 📂 Project Structure
+---
 
-```
+## 📁 Project Structure
+
+```text
 MuseGPT/
-├── public/
-├── routes/
+│
 ├── controllers/
 ├── middleware/
+├── models/
+├── routes/
 ├── services/
-├── utils/
-├── config/
 ├── views/
-├── .env
+├── public/
+│   ├── css/
+│   ├── js/
+│   └── assets/
+│
 ├── server.js
 ├── package.json
+├── .env
 └── README.md
 ```
 
-## 🚀 Getting Started
+---
+
+## ⚙️ Installation
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/musegpt.git
-cd musegpt
+git clone https://github.com/nageabhishek/MuseGPT.git
 ```
 
-### 2. Install Dependencies
+### 2. Move into the Project
+
+```bash
+cd MuseGPT
+```
+
+### 3. Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3. Configure Environment Variables
+### 4. Create Environment Variables
 
-Create a `.env` file and add the following:
+Create a `.env` file in the root directory:
 
 ```env
-PORT=5000
-OPENAI_API_KEY=your_api_key
-JWT_SECRET=your_secret_key
-PINECONE_API_KEY=your_pinecone_key
-PINECONE_INDEX_HOST=your_index_host
+PORT=3000
+
+MONGO_URI=your_mongodb_connection_string
+
+JWT_SECRET=your_jwt_secret
+
+COOKIE_SECRET=your_cookie_secret
+
+GEMINI_API_KEY=your_gemini_api_key
 ```
 
-### 4. Start the Development Server
+### 5. Start Development Server
 
 ```bash
 npm run dev
 ```
 
-or
+### 6. Start Production Server
 
 ```bash
 npm start
 ```
 
-## 🎯 Future Enhancements
+---
 
-* Voice Conversations
-* File Upload Support
-* Image Generation
-* Chat History Search
-* Team Collaboration Features
-* Multi-Model Support
-* Advanced Memory Management
+## 🚀 Deployment
 
-## 🤝 Contributing
+The application is deployed on Render.
 
-Contributions, suggestions, and improvements are welcome. Feel free to fork the repository and submit a pull request.
+Production URL:
+
+```text
+https://musegpt.onrender.com
+```
+
+---
+
+## 🔥 Key Highlights
+
+* Full-stack AI application
+* Real-time communication using Socket.io
+* Authentication and authorization
+* Gemini AI integration
+* Persistent memory support
+* MongoDB database integration
+* Cloud deployment on Render
+* Production-ready backend architecture
+
+---
 
 
+---
+
+## 🎯 Future Improvements
+
+* Voice-to-Text Chat
+* Multi-Model AI Support
+* File Uploads
+* Team Workspaces
+* Conversation Search
+* User Profiles
+* AI Agent Workflows
+
+---
+
+
+
+## ⭐ Support
+
+If you found this project useful:
+
+1. Star the repository
+2. Fork the project
+3. Share feedback
+4. Contribute improvements
+
+---
+.
