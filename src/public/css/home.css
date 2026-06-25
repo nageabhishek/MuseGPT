@@ -237,6 +237,88 @@ footer{
     padding:30px;
 
     color:#888;
+}
+
+@media (max-width: 900px) {
+    .navbar {
+        padding:20px 30px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding:30px 20px;
+    }
+
+    .hero h1 {
+        font-size:52px;
+    }
+
+    .hero h2 {
+        font-size:26px;
+    }
+
+    .hero p {
+        width:100%;
+        font-size:17px;
+    }
+
+    .hero-buttons {
+        flex-direction:column;
+        width:100%;
+        gap:15px;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        width:100%;
+        text-align:center;
+    }
+
+    .features {
+        flex-direction:column;
+        align-items:center;
+        gap:20px;
+        padding:30px 20px 50px;
+    }
+
+    .card {
+        width:100%;
+        max-width:520px;
+    }
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction:column;
+        align-items:flex-start;
+        gap:20px;
+        padding:18px 18px;
+    }
+
+    .hero {
+        padding:24px 16px;
+    }
+
+    .hero h1 {
+        font-size:42px;
+    }
+
+    .hero h2 {
+        font-size:22px;
+    }
+
+    .hero p {
+        font-size:16px;
+    }
+
+    .card {
+        padding:24px;
+    }
+
+    footer {
+        padding:24px 16px;
+    }
+}
 
     border-top:1px solid #222;
 

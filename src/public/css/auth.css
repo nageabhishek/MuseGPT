@@ -234,3 +234,55 @@ form button:hover{
 
     line-height:1.6;
 }
+
+@media (max-width: 700px) {
+    .auth-container{
+        padding:18px;
+    }
+
+    .auth-card{
+        padding:30px;
+        width:min(100%,420px);
+    }
+
+    .logo h1{
+        font-size:34px;
+    }
+
+    h2{
+        font-size:24px;
+    }
+
+    input{
+        padding:14px;
+    }
+
+    form button{
+        padding:14px;
+    }
+
+    .google-btn{
+        padding:13px;
+        font-size:14px;
+    }
+
+    .terms{
+        font-size:12px;
+    }
+}
+
+@media (max-width: 500px) {
+    .auth-card{
+        border-radius:22px;
+    }
+
+    .auth-container{
+        padding:14px;
+    }
+
+    .logo p,
+    .switch,
+    .terms{
+        font-size:13px;
+    }
+}
